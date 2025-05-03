@@ -1,7 +1,7 @@
 import { LogOut } from "lucide-react"
 import { MuteButton } from "./MuteButton";
 import { GridPlayers } from "./GridPlayers";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAgora } from "@/contexts/AgoraProvider";
 import { disconnectUser2 } from "@/services/userService";
 import useBeforeUnload from "./BeforeUnload";

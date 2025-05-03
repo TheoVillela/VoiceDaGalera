@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const useBeforeUnload = (callback: () => void) => {
     useEffect(() => {
-        const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+        const handleBeforeUnload = () => {
             callback();
         };
 
