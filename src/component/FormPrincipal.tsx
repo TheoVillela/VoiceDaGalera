@@ -52,7 +52,7 @@ export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
 
     setPuuid(dataUser.puuid)
     setRoomId(room_id)
-    abrirFormPartida(userName, puuid, room_id)
+    abrirFormPartida(userName, dataUser.puuid, room_id)
   };
 
 
