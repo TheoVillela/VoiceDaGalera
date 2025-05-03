@@ -35,16 +35,6 @@ export const useAgoraVoice = () => {
 
         await rtcClient.publish([track])
 
-        // rtcClient.enableAudioVolumeIndicator();
-        // //evento volume indicator
-        // rtcClient.on("volume-indicator", (volumes) => {
-        //     const levels: { [uid: string]: number } = {};
-        //     volumes.forEach((v) => {
-        //         levels[v.uid] = v.level;
-        //     });
-        //     setVolumeLevels(levels);
-        // });
-
         // Listen for remote users publishing audio
         rtcClient.on('user-published', async (user, mediaType) => {
             if (mediaType === 'audio') {

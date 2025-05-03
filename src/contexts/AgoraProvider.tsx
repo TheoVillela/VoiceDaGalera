@@ -12,20 +12,7 @@ interface Player {
 }
 
 type AgoraContextType = {
-    // join: (channel: string, uid: UID) => Promise<void>;
-    // leave: () => Promise<void>;
-
-    // // falta implementar os metods debaixo
-    // summonerName: string
-    // setSummonerName: (summonerName: string) => void
-    // roomId: string
-    // setRoomId: (roomId: string) => void
-    // puuid: string
-    // setPuuid: (puuid: string) => void
-    // setAllRemoteUsersVoice: (status: boolean) => void
-    // setRemoteUserVoice: (userId: UID, status: boolean) => void
-    // setLocalUserVoice: (status: boolean) => void
-    // playersConnected: Player[]
+    // controle
 
 
     //funcoes para o cliente usar

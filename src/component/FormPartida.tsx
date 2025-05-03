@@ -1,7 +1,7 @@
 import { LogOut } from "lucide-react"
 import { MuteButton } from "./MuteButton";
 import { GridPlayers } from "./GridPlayers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAgora } from "@/contexts/AgoraProvider";
 import { disconnectUser2 } from "@/services/userService";
 
@@ -14,6 +14,18 @@ interface FormPartidaProps {
 
 export function FormPartida({ fecharFormPartida, roomId, summonerName, puuid }: FormPartidaProps) {
     const { setIsMuted, setAllRemoteUsersMuted } = useAgora()
+
+    useEffect(() => {
+        const handleBeforeUnload = async () => {
+            await disconnectUser2(puuid);
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload, { capture: true });
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, []);
 
     //true eh igual a verde
     const [btnLocalUserStatus, setBtnLocalUserStatus] = useState<boolean>(true)

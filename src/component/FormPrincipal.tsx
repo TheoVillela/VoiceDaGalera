@@ -1,5 +1,5 @@
 import { getPartida2, getPuuid2 } from "@/services/riotService";
-// import { connectUser2 } from "@/services/userService";
+import { connectUser2 } from "@/services/userService";
 import { useState } from "react";
 
 interface FormPrincipalProps2 {
@@ -42,13 +42,13 @@ export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
     const room_id = `${dataPartida.data.gameId}${dataPartida.data.teamId}`;
     console.log(`RoomID estabelecido: ${room_id}`)
 
-    // const userLogado = await connectUser2(dataUser.puuid);
-    // console.log(`data: ${JSON.stringify(userLogado)}`)
+    const userLogado = await connectUser2(dataUser.puuid);
+    console.log(`data: ${JSON.stringify(userLogado)}`)
 
-    // if (userLogado.status === 201) {
-    //   alert("Player já conectado!");
-    //   return;
-    // }
+    if (userLogado.status === 201) {
+      alert("Player já conectado!");
+      return;
+    }
 
     setPuuid(dataUser.puuid)
     setRoomId(room_id)

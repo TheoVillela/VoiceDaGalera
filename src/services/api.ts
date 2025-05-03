@@ -10,8 +10,9 @@ export interface MatchResponse {
 }
 
 // const LOCAL_SERVER = "http://localhost:3001";
-export const URL_SERVER = "https://lolvoipserver-production.up.railway.app";
+const URL_SERVER = "https://lolvoipserver-production.up.railway.app";
 
+export const SERVER_ATIVO = URL_SERVER;
 export const api = axios.create({
   baseURL: URL_SERVER,
   // headers: {
