@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { IAgoraRTCClient, ILocalAudioTrack, UID } from 'agora-rtc-sdk-ng'
+import type { IAgoraRTCClient, ILocalAudioTrack } from 'agora-rtc-sdk-ng'
 import { Bird, Bug, Cat, Origami, LucideIcon } from 'lucide-react'
 import { useAgora } from '@/contexts/AgoraProvider'
 

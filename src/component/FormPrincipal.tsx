@@ -8,7 +8,7 @@ interface FormPrincipalProps2 {
 
 export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
   const [userName, setUserName] = useState<string>("");
-  const [roomId, setRoomId] = useState<string>("");
+  const [, setRoomId] = useState<string>("");
   const [puuid, setPuuid] = useState<string>("");
 
   //metodo que contem o controle da api
@@ -39,7 +39,7 @@ export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
 
     console.log(dataPartida.data.gameId)
     console.log(`Partida encontrada: ${dataPartida.data.gameId}${dataPartida.data.teamId}`);
-    let room_id = `${dataPartida.data.gameId}${dataPartida.data.teamId}`;
+    const room_id = `${dataPartida.data.gameId}${dataPartida.data.teamId}`;
     console.log(`RoomID estabelecido: ${room_id}`)
 
     const userLogado = await connectUser2(dataUser.puuid);

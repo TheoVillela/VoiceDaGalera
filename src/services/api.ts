@@ -9,7 +9,7 @@ export interface MatchResponse {
   teamId: string;
 }
 
-const LOCAL_SERVER = "http://localhost:3001";
+// const LOCAL_SERVER = "http://localhost:3001";
 const URL_SERVER = "https://lolvoipserver-production.up.railway.app";
 
 export const api = axios.create({

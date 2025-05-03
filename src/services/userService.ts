@@ -1,6 +1,5 @@
 /////////////////----------------------------rEQUEST TRATAR USER
 
-import { AxiosError } from "axios";
 import { api } from "./api";
 
 export async function connectUser(puuid: string) {

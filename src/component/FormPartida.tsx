@@ -1,12 +1,9 @@
 import { LogOut } from "lucide-react"
 import { MuteButton } from "./MuteButton";
-
 import { GridPlayers } from "./GridPlayers";
 import { useEffect, useState } from "react";
-import { useAgoraVoice } from "@/services/useAgoraVoiceChat";
 import { useAgora } from "@/contexts/AgoraProvider";
 import { disconnectUser2 } from "@/services/userService";
-// import { useAgora } from "@/contexts/AgoraProvider";
 
 interface FormPartidaProps {
     fecharFormPartida: () => void

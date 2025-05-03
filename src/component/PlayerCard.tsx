@@ -3,7 +3,6 @@ import { Card } from "./Card"
 import { MuteButton } from "./MuteButton"
 import { useState } from "react"
 import { IAgoraRTCRemoteUser, UID } from "agora-rtc-sdk-ng"
-import { useAgora } from "@/contexts/AgoraProvider"
 
 interface Player {
     userName: string
