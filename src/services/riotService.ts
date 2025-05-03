@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import { api, MatchResponse, PuuidResponse } from './api';
+import { api, MatchResponse, PuuidResponse, URL_SERVER } from './api';
 
 //----------------------- RIOT request below ================
 // Função para buscar o PUUID usando username + tagline
@@ -52,7 +52,7 @@ export const getPuuid2 = async (
 ) => {
   const [summonerName, tagLine] = username.split("#");
 
-  const res = await fetch(`http://localhost:3001/getUserId?summonerName=${summonerName}&tagLine=${tagLine}`);
+  const res = await fetch(`${URL_SERVER}/getUserId?summonerName=${summonerName}&tagLine=${tagLine}`);
 
   if (!res.ok) {
     const errorData = await res.json();
@@ -71,7 +71,7 @@ export const getPartida2 = async (
 ) => {
   console.log("Chamando getActiveGame com PUUID:", puuid);
 
-  const res = await fetch(`http://localhost:3001/getActiveGame/?puuid=${puuid}`);
+  const res = await fetch(`${URL_SERVER}/getActiveGame/?puuid=${puuid}`);
 
   if (!res.ok) {
     const errorData = await res.json();

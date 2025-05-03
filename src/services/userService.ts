@@ -1,6 +1,6 @@
 /////////////////----------------------------rEQUEST TRATAR USER
 
-import { api } from "./api";
+import { api, URL_SERVER } from "./api";
 
 export async function connectUser(puuid: string) {
   let response;
@@ -41,7 +41,7 @@ export async function disconnectUser(puuid: string) {
 export const connectUser2 = async (puuid: string) => {
   console.log("Conectando user com PUUID:", puuid);
 
-  const res = await fetch(`http://localhost:3001/connectUser`, {
+  const res = await fetch(`${URL_SERVER}/connectUser`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export const connectUser2 = async (puuid: string) => {
 }
 
 export const disconnectUser2 = async (puuid: string) => {
-  await fetch(`http://localhost:3001/disconnectUser`, {
+  await fetch(`${URL_SERVER}/disconnectUser`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
