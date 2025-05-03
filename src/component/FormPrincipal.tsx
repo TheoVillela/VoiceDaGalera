@@ -9,7 +9,7 @@ interface FormPrincipalProps2 {
 export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
   const [userName, setUserName] = useState<string>("");
   const [, setRoomId] = useState<string>("");
-  const [puuid, setPuuid] = useState<string>("");
+  const [, setPuuid] = useState<string>("");
 
   //metodo que contem o controle da api
   const handleConectar = async () => {
