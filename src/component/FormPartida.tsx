@@ -4,6 +4,8 @@ import { GridPlayers } from "./GridPlayers";
 import { useEffect, useState } from "react";
 import { useAgora } from "@/contexts/AgoraProvider";
 import { disconnectUser2 } from "@/services/userService";
+import useBeforeUnload from "./BeforeUnload";
+
 
 interface FormPartidaProps {
     fecharFormPartida: () => void
@@ -15,11 +17,10 @@ interface FormPartidaProps {
 export function FormPartida({ fecharFormPartida, roomId, summonerName, puuid }: FormPartidaProps) {
     const { setIsMuted, setAllRemoteUsersMuted } = useAgora()
 
-    useEffect(() => {
-        return () => {
-            disconnectUser2(puuid);
-        }
-    }, [])
+    useBeforeUnload(async () => {
+        console.log('A aba vai ser fechada ou recarregada');
+        await disconnectUser2(puuid);
+    });
 
     //true eh igual a verde
     const [btnLocalUserStatus, setBtnLocalUserStatus] = useState<boolean>(true)
