@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HelpCircle } from "lucide-react"
 
 export function Header() {
   return (
@@ -16,8 +17,10 @@ export function Header() {
         {/* <button id="btnConectarHeader" className="hover:bg-yellow-700 p-2 text-yellow-400 rounded font-semibold border">
           Conectar agora
         </button> */}
-        <button id="btnVerComoFunciona" className="hover:bg-[#05e2ff65] p-2 mr-4 rounded font-semibold border border-[#05e1ff] text-[#05e1ff]">
-          Ver como funciona
+
+        <button id="btnVerComoFunciona" className="flex gap-2 hover:bg-[#05e2ff65] p-2 mr-4 rounded font-semibold border border-[#05e1ff] text-[#05e1ff]">
+          <HelpCircle />
+          Ajuda!
         </button>
       </div>
     </header>
