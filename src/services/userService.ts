@@ -46,7 +46,7 @@ export const connectUser2 = async (puuid: string) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ puuid })
+    body: JSON.stringify({ puuid: puuid })
   });
 
   if (!res.ok) {
@@ -66,7 +66,7 @@ export const disconnectUser2 = async (puuid: string) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ puuid })
+    body: JSON.stringify({ puuid: puuid })
   });
 
   console.log("Desconectado:");

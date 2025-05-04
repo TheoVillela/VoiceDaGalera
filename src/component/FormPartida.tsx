@@ -12,12 +12,12 @@ interface FormPartidaProps {
     puuid: string
 }
 
-export function FormPartida({ fecharFormPartida, roomId, summonerName, puuid }: FormPartidaProps) {
+export function FormPartida({ fecharFormPartida, roomId, summonerName }: FormPartidaProps) {
     const { setIsMuted, setAllRemoteUsersMuted } = useAgora()
 
     useEffect(() => {
         const handleBeforeUnload = async () => {
-            await disconnectUser2(puuid);
+            await disconnectUser2(summonerName); //passava puuid
         };
 
         window.addEventListener("beforeunload", handleBeforeUnload, { capture: true });
@@ -33,7 +33,7 @@ export function FormPartida({ fecharFormPartida, roomId, summonerName, puuid }: 
     const [btnRemoteUsersStatus, setBtnRemoteUsersStatus] = useState<boolean>(true)
 
     const btnSairClick = async () => {
-        await disconnectUser2(puuid);
+        await disconnectUser2(summonerName); //passava puuid
         fecharFormPartida();
     }
 

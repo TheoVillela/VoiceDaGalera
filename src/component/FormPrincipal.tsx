@@ -42,7 +42,9 @@ export function FormPrincipal({ abrirFormPartida }: FormPrincipalProps2) {
     const room_id = `${dataPartida.data.gameId}${dataPartida.data.teamId}`;
     console.log(`RoomID estabelecido: ${room_id}`)
 
-    const userLogado = await connectUser2(dataUser.puuid);
+    // const userLogado = await connectUser2(dataUser.puuid); //passava puuid, vamo tentar passando summonername
+    const userLogado = await connectUser2(userName);
+
     console.log(`data: ${JSON.stringify(userLogado)}`)
 
     if (userLogado.status === 201) {
