@@ -6,7 +6,7 @@ export function GridPlayers() {
     const { playersConnected } = useAgora();
 
     return (
-        <div className="grid grid-cols-5 text-center gap-10">
+        <div className="grid grid-cols-4 text-center gap-10">
             {playersConnected.map(player => (
                 <PlayerCard key={player.userId} player={player} />
             ))}
